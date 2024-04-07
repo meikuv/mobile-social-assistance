@@ -38,7 +38,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       return data
     } catch (error) {
       showToast('error', 'Вход', error.message)
-      console.error('Login error: ', error)
+      throw new Error('Login error')
     } finally {
       setIsLoading(false)
     }
@@ -54,7 +54,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       return data
     } catch (error) {
       showToast('error', 'Регистрация', error.message)
-      console.error('Registration error: ', error)
+      throw new Error('Registration error')
     } finally {
       setIsLoading(false)
     }
@@ -70,7 +70,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       return data
     } catch (error) {
       showToast('error', 'Регистрация', error.message)
-      console.error('Registration error: ', error)
+      throw new Error('Verification error')
     } finally {
       setIsLoading(false)
     }
@@ -87,7 +87,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       return data
     } catch (error) {
       showToast('error', 'Выход', error.message)
-      console.error('Logout error: ', error)
+      throw new Error('Logout error')
     } finally {
       setIsLoading(false)
     }
@@ -97,6 +97,10 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     const subscription = AppState.addEventListener('change', (nextAppState) => {
       appState.current = nextAppState
       setAppStateVisible(appState.current)
+
+      if (nextAppState === 'unknown') {
+        logout()
+      }
     })
 
     return () => {

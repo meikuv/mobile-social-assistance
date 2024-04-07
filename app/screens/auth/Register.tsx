@@ -4,6 +4,7 @@ import Loader from '../../components/ui/Loader'
 import Field from '../../components/ui/Field'
 import Button from '../../components/ui/Button'
 import { useAuth } from '../../hooks/useAuth'
+import { useNavigation } from '@react-navigation/native'
 
 interface IData {
   email: string
@@ -11,7 +12,8 @@ interface IData {
   password: string
 }
 
-const Register: FC = ({ navigation }) => {
+const Register: FC = () => {
+  const navigation = useNavigation()
   const { register, isLoading } = useAuth()
   const [data, setData] = useState<IData>({ username: '', password: '', email: '' })
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
@@ -43,11 +45,11 @@ const Register: FC = ({ navigation }) => {
     }
 
     const { username, email, password } = data
-    await register(username, email, password).then(() =>
+    await register(username, email, password).then(() => {
       navigation.navigate('Verification', {
         email: data.email,
       })
-    )
+    })
     setData({} as IData)
   }
 

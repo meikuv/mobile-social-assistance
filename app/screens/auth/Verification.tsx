@@ -3,8 +3,12 @@ import { View, Text } from 'react-native'
 import CodeInputField from '../../components/CodeInputField'
 import Button from '../../components/ui/Button'
 import { useAuth } from '../../hooks/useAuth'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
-const Verification: FC = ({ route, navigation }) => {
+const Verification: FC = () => {
+  const route = useRoute()
+  const navigation = useNavigation()
+  
   const { email } = route.params
   const [pinReady, setPinReady] = useState<boolean>(false)
   const [code, setCode] = useState<string>('')
@@ -13,7 +17,9 @@ const Verification: FC = ({ route, navigation }) => {
   const { verification } = useAuth()
 
   const verificationHandler = () => {
-    verification(email, code).then(() => navigation.navigate('Login'))
+    verification(email, code).then(() => {
+      navigation.navigate('Login')
+    })
   }
 
   const handleChange = (inputValue: any) => {

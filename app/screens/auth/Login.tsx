@@ -3,15 +3,16 @@ import { View, Text, Pressable } from 'react-native'
 import Loader from '../../components/ui/Loader'
 import Field from '../../components/ui/Field'
 import Button from '../../components/ui/Button'
-import { showToast } from '../../hooks/useToast'
 import { useAuth } from '../../hooks/useAuth'
+import { useNavigation } from '@react-navigation/native'
 
 interface IData {
   username: string
   password: string
 }
 
-const Login: FC = ({ navigation }) => {
+const Login: FC = () => {
+  const navigation = useNavigation()
   const { login, isLoading } = useAuth()
   const [data, setData] = useState<IData>({ username: '', password: '' })
   const [errors, setErrors] = useState<{ [key: string]: string }>({})

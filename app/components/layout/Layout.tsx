@@ -6,10 +6,9 @@ interface ILayout {
   children: ReactNode
 }
 
-
 const Layout: FC<ILayout> = ({ children, isScrollView = true }) => {
   return (
-    <View className="h-full w-full bg-white pt-16">
+    <View className="h-full w-full bg-white">
       {isScrollView ? <ScrollView>{children}</ScrollView> : children}
     </View>
   )

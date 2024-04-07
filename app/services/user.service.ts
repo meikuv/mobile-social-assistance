@@ -10,24 +10,19 @@ export interface IUser {
 }
 
 class UserService {
-  async getMe(): Promise<IUser | null> {
-    try {
-      const accessToken = await TokenService.getLocalAccessToken()
-      if (!accessToken) {
-        throw new Error('No access token available')
-      }
-
-      const response = await http.get<IUser>('/auth/profile/me', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
-
-      return response.data
-    } catch (error) {
-      console.error('Error getting user profile: ', error)
-      throw error
+  async getMe() {
+    const accessToken = await TokenService.getLocalAccessToken()
+    if (!accessToken) {
+      throw new Error('No access token available')
     }
+
+    console.log(accessToken)
+
+    return await http.get<IUser>('/auth/user/me', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
   }
 }
 
