@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 
 const Content = () => {
   return (
-    <View>
+    <View className="w-full h-max items-center justify-center bg-white rounded-xl">
       <Text>Content</Text>
     </View>
   )

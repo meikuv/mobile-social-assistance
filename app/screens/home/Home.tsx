@@ -1,14 +1,10 @@
 import React, { FC } from 'react'
-import { View } from 'react-native'
-import Button from '../../components/ui/Button'
-import { useAuth } from '../../hooks/useAuth'
+import { View, Text } from 'react-native'
 
 const Home: FC = () => {
-  const { logout } = useAuth()
-
   return (
     <View>
-      <Button onPress={logout} title="Выйти" isLoading={false} />
+      <Text>HOME</Text>
     </View>
   )
 }

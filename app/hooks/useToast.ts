@@ -8,7 +8,7 @@ export function showToast(type: any, title = '', content = '') {
       fontSize: 15,
     },
     text2Style: {
-      fontSize: 15,
+      fontSize: 12,
     },
     text2: content,
   })

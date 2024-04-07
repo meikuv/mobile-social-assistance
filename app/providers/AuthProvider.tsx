@@ -27,17 +27,21 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const login = async (username: string, password: string) => {
-    try {
-      setIsLoading(true)
+    setIsLoading(true)
 
+    try {
       const { data } = await AuthService.login(username, password)
       await TokenService.setCredentials(data)
       setIsLoggedIn(true)
-
       showToast('success', 'Вход', data.message)
       return data
-    } catch (error) {
-      showToast('error', 'Вход', error.message)
+    } catch (error: any) {
+      if (error.response) {
+        const errorMessage = error.response.data.message
+        showToast('error', 'Вход', errorMessage)
+      } else {
+        console.log(error)
+      }
       throw new Error('Login error')
     } finally {
       setIsLoading(false)
@@ -52,8 +56,13 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
       showToast('success', 'Регистрация', data.message)
       return data
-    } catch (error) {
-      showToast('error', 'Регистрация', error.message)
+    } catch (error: any) {
+      if (error.response) {
+        const errorMessage = error.response.data.message
+        showToast('error', 'Регистрация', errorMessage)
+      } else {
+        console.log(error)
+      }
       throw new Error('Registration error')
     } finally {
       setIsLoading(false)
@@ -68,8 +77,13 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
       showToast('success', 'Верификация', data.message)
       return data
-    } catch (error) {
-      showToast('error', 'Регистрация', error.message)
+    } catch (error: any) {
+      if (error.response) {
+        const errorMessage = error.response.data.message
+        showToast('error', 'Верификация', errorMessage)
+      } else {
+        console.log(error)
+      }
       throw new Error('Verification error')
     } finally {
       setIsLoading(false)
@@ -85,8 +99,13 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
       showToast('success', 'Выход', data.message)
       return data
-    } catch (error) {
-      showToast('error', 'Выход', error.message)
+    } catch (error: any) {
+      if (error.response) {
+        const errorMessage = error.response.data.message
+        showToast('error', 'Выход', errorMessage)
+      } else {
+        console.log(error)
+      }
       throw new Error('Logout error')
     } finally {
       setIsLoading(false)

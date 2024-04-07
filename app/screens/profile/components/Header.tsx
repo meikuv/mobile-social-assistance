@@ -9,7 +9,7 @@ interface IProfileHeader {
   lastName?: string
 }
 
-const ProfileHeader: FC<IProfileHeader> = ({ username, firstName, lastName, email }) => {
+const Header: FC<IProfileHeader> = ({ username, firstName, lastName, email }) => {
   return (
     <View className="w-full h-32 bg-sky-600 rounded-b-2xl justify-center items-center">
       <View className="w-10/12 pt-5 flex flex-row justify-between items-center">
@@ -26,4 +26,4 @@ const ProfileHeader: FC<IProfileHeader> = ({ username, firstName, lastName, emai
   )
 }
 
-export default ProfileHeader
+export default Header
