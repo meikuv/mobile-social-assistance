@@ -6,4 +6,7 @@ export type TypeRootStackParamList = {
   Profile: undefined
   Services: undefined
   Support: undefined
+  ProfileUpdate: any
+  ChangePassword: undefined
+  Settings: undefined
 }

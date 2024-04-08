@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { useAuth } from '../hooks/useAuth'
-import AuthStack from './AuthStack'
-import PrivateStack from './PrivateStack'
+import AuthStack from './auth/AuthStack'
+import PrivateStack from './private/PrivateStack'
 
 const Stack = createNativeStackNavigator()
 

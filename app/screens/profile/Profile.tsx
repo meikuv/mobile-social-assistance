@@ -17,8 +17,13 @@ const Profile = () => {
         </View>
       ) : (
         <>
-          <Header username={user?.username} email={user?.email} />
-          <ScrollView contentContainerStyle={{ padding: 12, alignItems: 'center' }}>
+          <Header user={user} />
+          <ScrollView
+            contentContainerStyle={{
+              padding: 12,
+              alignItems: 'center',
+            }}
+          >
             <Content />
             <Footer />
           </ScrollView>

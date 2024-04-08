@@ -3,9 +3,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import Home from '../screens/home/Home'
-import Profile from '../screens/profile/Profile'
-import Search from '../screens/search/Search'
+import Home from '../../screens/home/Home'
+import Profile from '../../screens/profile/Profile'
+import Search from '../../screens/search/Search'
+import ProfileStack from '../profile/ProfileStack'
 
 const Tab = createBottomTabNavigator()
 
@@ -50,8 +51,8 @@ const PrivateStack = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="ProfileStack"
+        component={ProfileStack}
         options={{
           tabBarLabel: 'Профиль',
           tabBarIcon: ({ color }) => (
