@@ -1,0 +1,76 @@
+{
+  "translation": {
+    "login": {
+      "title": "Добро пожаловать",
+      "username": "Введите логин",
+      "usernameError": "Заполните поле логин",
+      "password": "Введите пароль",
+      "passwordError": "Заполните поле пароль",
+      "loginButton": "Войти",
+      "toRegistration": "Пройти регистрацию"
+    },
+    "register": {
+      "title": "Регистарция",
+      "username": "Создайте новый логин",
+      "usernameError": "Заполните поле логин",
+      "email": "Введите email",
+      "emailError": "Заполните поле email",
+      "password": "Создайте пароль",
+      "passwordError": "Заполните поле пароль",
+      "registerButton": "Создать",
+      "toLogin": "Войти в свой аккаунт"
+    },
+    "verification": {
+      "title": "Email верификация",
+      "subTitle": "Проверочный код был отправлен по адресу",
+      "verificationButton": "Подтверждение"
+    },
+    "home": {
+      "title": "Главная"
+    },
+    "search": {
+      "title": "Поиск"
+    },
+    "support": {
+      "title": "Поддержка"
+    },
+    "profile": {
+      "title": "Профиль"
+    },
+    "profileUpdate": {
+      "title": "Обновить данные",
+      "username": "Логин",
+      "email": "Почта",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "phoneNumber": "Номер телефона",
+      "updateButton": "Обновить"
+    },
+    "settings": {
+      "title": "Настройки",
+      "appLang": "Язык приложения",
+      "general": "Общие",
+      "notification": "Уведомеление"
+    },
+    "changePassword": {
+      "title": "Изменить пароль",
+      "oldPassword": "Текущий пароль",
+      "newPassword": "Новый пароль",
+      "confirmPassword": "Подтвердите пароль",
+      "updateButton": "Обновить"
+    },
+    "history": {
+      "title": "История"
+    },
+    "myRequests": {
+      "title": "Мои запросы"
+    },
+    "leaveReview": {
+      "title": "Оставить отзыв"
+    },
+    "contact": {
+      "title": "Связаться с нами"
+    },
+    "quit": "Выход"
+  }
+}

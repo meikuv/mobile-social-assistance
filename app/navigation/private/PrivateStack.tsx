@@ -7,10 +7,13 @@ import Home from '../../screens/home/Home'
 import Profile from '../../screens/profile/Profile'
 import Search from '../../screens/search/Search'
 import ProfileStack from '../profile/ProfileStack'
+import { useTranslation } from 'react-i18next'
 
 const Tab = createBottomTabNavigator()
 
 const PrivateStack = () => {
+  const { t } = useTranslation()
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -30,7 +33,7 @@ const PrivateStack = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Главная',
+          tabBarLabel: t('home.title'),
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="home" size={30} color={color} />,
         }}
       />
@@ -38,7 +41,7 @@ const PrivateStack = () => {
         name="Search"
         component={Search}
         options={{
-          tabBarLabel: 'Поиск',
+          tabBarLabel: t('search.title'),
           tabBarIcon: ({ color }) => <Ionicons name="search" size={30} color={color} />,
         }}
       />
@@ -46,7 +49,7 @@ const PrivateStack = () => {
         name="Support"
         component={Search}
         options={{
-          tabBarLabel: 'Поддержка',
+          tabBarLabel: t('support.title'),
           tabBarIcon: ({ color }) => <MaterialIcons name="support-agent" size={30} color={color} />,
         }}
       />
@@ -54,7 +57,7 @@ const PrivateStack = () => {
         name="ProfileStack"
         component={ProfileStack}
         options={{
-          tabBarLabel: 'Профиль',
+          tabBarLabel: t('profile.title'),
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account-circle" size={30} color={color} />
           ),

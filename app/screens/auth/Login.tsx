@@ -5,6 +5,7 @@ import Field from '../../components/ui/Field'
 import Button from '../../components/ui/Button'
 import { useAuth } from '../../hooks/useAuth'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 interface IData {
   username: string
@@ -12,6 +13,7 @@ interface IData {
 }
 
 const Login: FC = () => {
+  const { t } = useTranslation()
   const navigation = useNavigation()
   const { login, isLoading } = useAuth()
   const [data, setData] = useState<IData>({ username: '', password: '' })
@@ -21,11 +23,11 @@ const Login: FC = () => {
     const errors: { [key: string]: string } = {}
 
     if (!data.username || !data.username.trim()) {
-      errors.username = 'Заполните поле логин'
+      errors.username = t('login.usernameError')
     }
 
     if (!data.password || !data.password.trim()) {
-      errors.password = 'Заполните поле пароль'
+      errors.password = t('login.passwordError')
     }
 
     return errors
@@ -53,11 +55,11 @@ const Login: FC = () => {
           ) : (
             <>
               <Text className="text-center text-blue-900 text-2xl font-bold mb-5">
-                Добро пожаловать
+                {t('login.title')}
               </Text>
               <Field
                 value={data.username}
-                placeholder="Введите логин"
+                placeholder={t('login.username')}
                 onChange={(val) => {
                   setData({ ...data, username: val })
                   setErrors({ ...errors, username: '' })
@@ -67,7 +69,7 @@ const Login: FC = () => {
               />
               <Field
                 value={data.password}
-                placeholder="Введите пароль"
+                placeholder={t('login.password')}
                 onChange={(val) => {
                   setData({ ...data, password: val })
                   setErrors({ ...errors, password: '' })
@@ -75,10 +77,10 @@ const Login: FC = () => {
                 isSecure={true}
                 error={errors.password}
               />
-              <Button onPress={loginHandler} title="Войти" isLoading={isLoading} />
+              <Button onPress={loginHandler} title={t('login.loginButton')} isLoading={isLoading} />
               <Pressable onPress={() => navigation.navigate('Register')}>
                 <Text className="text-center mt-1 text-gray-400 font-semibold">
-                  Пройти регистрацию
+                  {t('login.toRegistration')}
                 </Text>
               </Pressable>
             </>

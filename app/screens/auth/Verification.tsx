@@ -4,11 +4,13 @@ import CodeInputField from '../../components/CodeInputField'
 import Button from '../../components/ui/Button'
 import { useAuth } from '../../hooks/useAuth'
 import { useNavigation, useRoute } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 const Verification: FC = () => {
   const route = useRoute()
   const navigation = useNavigation()
-  
+  const { t } = useTranslation()
+
   const { email } = route.params
   const [pinReady, setPinReady] = useState<boolean>(false)
   const [code, setCode] = useState<string>('')
@@ -33,9 +35,11 @@ const Verification: FC = () => {
     <View className="h-full w-full bg-white pt-16">
       <View className="mx-5 justify-center items-center h-full">
         <View className="w-10/12">
-          <Text className="text-center text-blue-900 text-2xl font-bold">Email верификация</Text>
+          <Text className="text-center text-blue-900 text-2xl font-bold">
+            {t('verification.title')}
+          </Text>
           <Text className="text-gray-400 text-center text-xs">
-            Проверочный код был отправлен по адресу
+            {t('verification.subTitle')}
             <Text className="text-gray-800"> {email}</Text>
           </Text>
           <CodeInputField
@@ -46,7 +50,7 @@ const Verification: FC = () => {
           />
           <Button
             onPress={verificationHandler}
-            title="Проверить"
+            title={t('verification.verificationButton')}
             isLoading={false}
             isDisabled={!pinReady}
           />

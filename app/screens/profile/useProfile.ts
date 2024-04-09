@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query' // Assuming you're using tanstack/react-query
 import UserService, { IUser } from '../../services/user.service'
 import { showToast } from '../../hooks/useToast'
+import { IChangePassword } from './changePassword/ChangePassword'
 
 export const useGetProfile = () => {
   return useQuery({
@@ -30,11 +31,32 @@ export const useUpdateProfile = () => {
         } else {
           console.log(error)
         }
-        throw new Error('Verification error')
+        throw new Error('Update profile error')
       }
     },
     onSuccess: () => {
       queryClient.refetchQueries('getMe')
+    },
+  })
+}
+
+export const useChangePassword = () => {
+  return useMutation({
+    mutationFn: async (password: IChangePassword | undefined) => {
+      try {
+        const { data } = await UserService.changePassword(password)
+        console.log(data)
+        showToast('success', 'Изменить пароль', data.message)
+        return data
+      } catch (error: any) {
+        if (error.response) {
+          const errorMessage = error.response.data.message
+          showToast('error', 'Изменить пароль', errorMessage)
+        } else {
+          console.log(error)
+        }
+        throw new Error('Change password error')
+      }
     },
   })
 }

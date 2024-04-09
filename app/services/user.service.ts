@@ -1,4 +1,5 @@
 import http from '../api'
+import { IChangePassword } from '../screens/profile/changePassword/ChangePassword'
 import TokenService from './token.service'
 
 export interface IUser {
@@ -30,6 +31,19 @@ class UserService {
     }
 
     return await http.post<any>('/auth/user/profile-update', user, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+  }
+
+  async changePassword(data: IChangePassword | undefined) {
+    const accessToken = await TokenService.getLocalAccessToken()
+    if (!accessToken) {
+      throw new Error('No access token available')
+    }
+
+    return await http.post<any>('/auth/user/change-password', data, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

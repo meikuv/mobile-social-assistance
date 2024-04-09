@@ -1,0 +1,76 @@
+{
+  "translation": {
+    "login": {
+      "title": "Қош келдіңіз",
+      "username": "Логинді енгізіңіз",
+      "usernameError": "Логин толтырыңыз",
+      "password": "Құпия сөзді енгізіңіз",
+      "passwordError": "Құпия сөзді толтырыңыз",
+      "loginButton": "Кіру",
+      "toRegistration": "Тіркеуден өту"
+    },
+    "register": {
+      "title": "Тіркеу",
+      "username": "Жаңа логин жасаңыз",
+      "usernameError": "Логинді толтырыңыз",
+      "email": "Электрондық пошта енгізіңіз",
+      "emailError": "Электрондық пошта толтырыңыз",
+      "password": "Құпия сөзді құрыңыз",
+      "passwordError": "Құпия сөзді толтырыңыз",
+      "registerButton": "Жасау",
+      "toLogin": "Өз акаунтыңызға кіру"
+    },
+    "verification": {
+      "title": "Email верификация",
+      "subTitle": "Тексеру коды жіберілді",
+      "verificationButton": "Растау"
+    },
+    "home": {
+      "title": "Басты бет"
+    },
+    "search": {
+      "title": "Іздеу"
+    },
+    "support": {
+      "title": "Қолдау қызметі"
+    },
+    "profile": {
+      "title": "Профиль"
+    },
+    "profileUpdate": {
+      "title": "Деректерді жаңарту",
+      "username": "Логин",
+      "email": "Электрондық пошта",
+      "firstName": "Аты",
+      "lastName": "Тегі",
+      "phoneNumber": "Телефон нөмірі",
+      "updateButton": "Жаңарту"
+    },
+    "settings": {
+      "title": "Параметрлер",
+      "appLang": "Қолдану тілі",
+      "general": "Жалпы",
+      "notification": "Xабарлама"
+    },
+    "changePassword": {
+      "title": "Құпия сөзді өзгерту",
+      "oldPassword": "Ағымдағы құпия сөз",
+      "newPassword": "Жаңа құпия сөз",
+      "confirmPassword": "Құпия сөзді растаңыз",
+      "updateButton": "Жаңарту"
+    },
+    "history": {
+      "title": "Тарих"
+    },
+    "myRequests": {
+      "title": "Менің сұрауларым"
+    },
+    "leaveReview": {
+      "title": "Пікір қалдыру"
+    },
+    "contact": {
+      "title": "Бізбен байланыс"
+    },
+    "quit": "Шығу"
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const ProfileSettings = () => {
+const Notification = () => {
   return (
     <View>
-      <Text>Settings</Text>
+      <Text>Notification</Text>
     </View>
   )
 }
 
-export default ProfileSettings
+export default Notification

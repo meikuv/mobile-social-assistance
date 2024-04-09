@@ -6,8 +6,10 @@ import Layout from '../../components/layout/Layout'
 import Field from '../../components/ui/Field'
 import Button from '../../components/ui/Button'
 import Loader from '../../components/ui/Loader'
+import { useTranslation } from 'react-i18next'
 
 const ProfileUpdate: FC = () => {
+  const { t } = useTranslation()
   const { isPending, mutate } = useUpdateProfile()
   const { data: user, isLoading } = useGetProfile()
   const [data, setData] = useState<IUser | undefined>(user)
@@ -17,11 +19,11 @@ const ProfileUpdate: FC = () => {
   }
 
   const fields = [
-    { key: 'username', label: 'Логин', isDisabled: true },
-    { key: 'email', label: 'Почта', isDisabled: true },
-    { key: 'firstName', label: 'Имя' },
-    { key: 'lastName', label: 'Фамилия' },
-    { key: 'phoneNumber', label: 'Номер телефона' },
+    { key: 'username', isDisabled: true },
+    { key: 'email', isDisabled: true },
+    { key: 'firstName' },
+    { key: 'lastName' },
+    { key: 'phoneNumber' },
   ]
 
   return (
@@ -38,10 +40,14 @@ const ProfileUpdate: FC = () => {
                 value={data?.[field.key]}
                 isSecure={false}
                 isDisabled={field.isDisabled}
-                label={field.label}
+                label={t(`profileUpdate.${field.key}`)}
               />
             ))}
-            <Button onPress={updateHandler} isLoading={isPending} title="Обновить" />
+            <Button
+              onPress={updateHandler}
+              isLoading={isPending}
+              title={t('profileUpdate.updateButton')}
+            />
           </View>
         )}
       </View>
