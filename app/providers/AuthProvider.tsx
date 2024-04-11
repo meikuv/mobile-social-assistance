@@ -1,5 +1,5 @@
 import React, { createContext, useMemo, useState, useRef, useEffect, FC, ReactNode } from 'react'
-import { AppState, ToastAndroid } from 'react-native'
+import { AppState } from 'react-native'
 import AuthService from '../services/auth.service'
 import TokenService from '../services/token.service'
 import { showToast } from '../hooks/useToast'
@@ -38,12 +38,10 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     } catch (error: any) {
       if (error.response) {
         const errorMessage = error.response.data.message
-        ToastAndroid.show(errorMessage, ToastAndroid.LONG)
         showToast('error', 'Вход', errorMessage)
       } else {
         console.log(error)
       }
-      ToastAndroid.show(error, ToastAndroid.LONG)
       throw new Error('Login error')
     } finally {
       setIsLoading(false)

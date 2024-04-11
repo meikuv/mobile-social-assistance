@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import i18next from 'i18next'
 import i18n from '../locales/i18n'
 import LangService from '../services/lang.service'
