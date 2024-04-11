@@ -1,9 +1,7 @@
 import { createContext, useState, useEffect } from 'react'
 import i18next from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import i18n from '../locales/i18n'
 import LangService from '../services/lang.service'
-import kk from '../locales/kk-KK.json'
-import ru from '../locales/ru-RU.json'
 
 export interface I18nContextType {
   setLocale: (locale: string) => Promise<void>
@@ -41,15 +39,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!locale) return
 
-    i18next.use(initReactI18next).init({
-      compatibilityJSON: 'v3',
-      resources: {
-        kk,
-        ru,
-      },
-      lng: locale,
-      fallbackLng: 'en',
-    })
+    i18n.changeLanguage(locale)
   }, [locale])
 
   return (

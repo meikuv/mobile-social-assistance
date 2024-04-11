@@ -13,17 +13,24 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.meikuv.mobilesocialassistance"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.meikuv.mobilesocialassistance"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": []
+    "plugins": [["expo-build-properties", { "android": { "usesCleartextTraffic": true } }]],
+    "extra": {
+      "eas": {
+        "projectId": "faf7e1f5-480e-436e-b9cc-14a0d7f535c8"
+      }
+    }
   }
 }

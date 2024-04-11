@@ -32,7 +32,10 @@ const Footer: FC = () => {
         />
         <Text className="text-md text-sky-600">{t('changePassword.title')}</Text>
       </Pressable>
-      <Pressable className="flex-row items-center mb-5">
+      <Pressable
+        onPress={() => navigation.navigate('ContactUs')}
+        className="flex-row items-center mb-5"
+      >
         <Icon name="smartphone" size={25} style={{ marginRight: 15 }} color={'rgb(2 132 199)'} />
         <Text className="text-md text-sky-600">{t('contact.title')}</Text>
       </Pressable>

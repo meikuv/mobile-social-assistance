@@ -5,6 +5,7 @@ import ProfileUpdate from '../../screens/profile/ProfileUpdate'
 import Profile from '../../screens/profile/Profile'
 import ProfileSettings from '../../screens/profile/settings/ProfileSettings'
 import ChangePassword from '../../screens/profile/changePassword/ChangePassword'
+import ContactUs from '../../screens/profile/ContactUs'
 
 const Stack = createNativeStackNavigator()
 
@@ -37,6 +38,15 @@ const ProfileStack = () => {
         component={ChangePassword}
         options={{
           headerTitle: `${t('changePassword.title')}`,
+          headerTransparent: false,
+          headerTintColor: 'rgb(2, 132, 199)',
+        }}
+      />
+      <Stack.Screen
+        name="ContactUs"
+        component={ContactUs}
+        options={{
+          headerTitle: `${t('contact.title')}`,
           headerTransparent: false,
           headerTintColor: 'rgb(2, 132, 199)',
         }}

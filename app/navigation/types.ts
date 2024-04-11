@@ -9,4 +9,5 @@ export type TypeRootStackParamList = {
   ProfileUpdate: any
   ChangePassword: undefined
   Settings: undefined
+  ContactUs: undefined
 }

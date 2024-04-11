@@ -3,7 +3,7 @@ import TokenService from '../services/token.service'
 
 const axiosInstance: AxiosInstance = axios.create({
   withCredentials: true,
-  baseURL: 'http://192.168.187.92:8222/api/v1',
+  baseURL: process.env.EXPO_PUBLIC_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
