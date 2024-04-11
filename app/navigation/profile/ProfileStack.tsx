@@ -13,7 +13,14 @@ const ProfileStack = () => {
   const { t } = useTranslation()
 
   return (
-    <Stack.Navigator initialRouteName="Profile">
+    <Stack.Navigator
+      initialRouteName="Profile"
+      screenOptions={{
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
+        animation: 'slide_from_right',
+      }}
+    >
       <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
       <Stack.Screen
         name="ProfileUpdate"

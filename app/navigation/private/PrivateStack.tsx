@@ -4,7 +4,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Home from '../../screens/home/Home'
-import Profile from '../../screens/profile/Profile'
 import Search from '../../screens/search/Search'
 import ProfileStack from '../profile/ProfileStack'
 import { useTranslation } from 'react-i18next'

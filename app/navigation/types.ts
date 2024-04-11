@@ -1,4 +1,5 @@
 export type TypeRootStackParamList = {
+  Splash: undefined
   Login: undefined
   Register: undefined
   Verification: any

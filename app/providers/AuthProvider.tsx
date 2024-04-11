@@ -117,8 +117,8 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
       appState.current = nextAppState
       setAppStateVisible(appState.current)
 
-      if (nextAppState === 'unknown') {
-        logout()
+      if (nextAppState === 'background') {
+        setAppStateVisible('background')
       }
     })
 
