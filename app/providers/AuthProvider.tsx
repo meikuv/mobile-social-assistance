@@ -40,7 +40,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const errorMessage = error.response.data.message
         showToast('error', 'Вход', errorMessage)
       } else {
-        console.log(error)
+        showToast('error', 'Вход', 'Ошибка сети')
       }
       throw new Error('Login error')
     } finally {
@@ -61,7 +61,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const errorMessage = error.response.data.message
         showToast('error', 'Регистрация', errorMessage)
       } else {
-        console.log(error)
+        showToast('error', 'Регистрация', 'Ошибка сети')
       }
       throw new Error('Registration error')
     } finally {
@@ -82,7 +82,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const errorMessage = error.response.data.message
         showToast('error', 'Верификация', errorMessage)
       } else {
-        console.log(error)
+        showToast('error', 'Верификация', 'Ошибка сети')
       }
       throw new Error('Verification error')
     } finally {
@@ -104,7 +104,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
         const errorMessage = error.response.data.message
         showToast('error', 'Выход', errorMessage)
       } else {
-        console.log(error)
+        showToast('error', 'Выход', 'Ошибка сети')
       }
       throw new Error('Logout error')
     } finally {

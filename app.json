@@ -4,10 +4,10 @@
     "slug": "mobile-social-assistance",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/splash.png",
+    "icon": "./assets/splash-2.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-2.png",
       "resizeMode": "contain",
       "backgroundColor": "#f7f1e6"
     },
@@ -18,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splash.png",
+        "foregroundImage": "./assets/splash-2.png",
         "backgroundColor": "#ffffff",
         "resizeMode": "contain"
       },

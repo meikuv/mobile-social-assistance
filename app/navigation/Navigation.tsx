@@ -18,7 +18,13 @@ const Navigation: FC = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          gestureEnabled: true,
+          gestureDirection: 'horizontal',
+          animation: 'slide_from_right',
+        }}
+      >
         {isLoading ? (
           <Stack.Screen options={{ headerShown: false }} name="Splash" component={Splash} />
         ) : isLoggedIn ? (

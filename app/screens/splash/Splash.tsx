@@ -15,7 +15,7 @@ const Splash = () => {
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
       <Image
-        source={require('../../../assets/splash-1.png')}
+        source={require('../../../assets/splash.png')}
         style={styles.image}
         resizeMode="contain"
       />
