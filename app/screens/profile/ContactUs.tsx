@@ -11,10 +11,10 @@ const ContactUs: FC = () => {
         <View className="p-4">
           <Text className="text-lg font-medium">{t('contact.phoneNumber')}</Text>
           <Text
-            onPress={() => Linking.openURL('tel:+77714438894')}
+            onPress={() => Linking.openURL('tel:+77788310227')}
             className="text-sm text-sky-600"
           >
-            +77714438894
+            +77788310227
           </Text>
         </View>
         <View className="p-4">

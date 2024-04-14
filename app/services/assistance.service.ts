@@ -7,13 +7,23 @@ export interface IAssistance {
   name: string
   description: string
   subDescription: string
-  phoneNumbers: IPhoneNumbers[]
+  workingStartTime: string
+  workingEndTime: string
   email: string
+  phoneNumbers: IPhoneNumbers[]
+  locations: ILocations[]
 }
 
 export interface IPhoneNumbers {
   id: number
   phoneNumber: string
+}
+
+export interface ILocations {
+  id: number
+  location: string
+  longitude: number
+  latitude: number
 }
 
 class AssistanceService {
